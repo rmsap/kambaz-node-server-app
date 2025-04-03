@@ -59,8 +59,7 @@ export default function UserRoutes(app) {
     if (userId === "current") {
       const currentUser = req.session["currentUser"];
       if (!currentUser) {
-        // res.sendStatus(401);
-        res.json(req.session);
+        res.sendStatus(401);
         return;
       }
       userId = currentUser._id;
